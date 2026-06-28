@@ -75,6 +75,57 @@ The solution was intentionally designed as a lightweight extension built on the 
 
 Given that modifications to core organization systems typically require formal planning, procurement, and budget allocation cycles, the architecture prioritizes rapid implementation, iterative improvement, and minimal operational disruption. By operating independently of the production application, new analytical capabilities can be introduced and refined without affecting the stability or integrity of the official operational system.
 
+---
+## Key Functional Capabilities
 
+The Business Travel Decision Support System is organized into five functional layers that transform operational data into actionable decision-support information throughout the official business travel lifecycle.
+
+### Layer 1 — Data Integration
+Provides a reliable and centralized operational dataset by automating data acquisition from the existing organization application.
+
+**Capabilities**
+- Automatically synchronizes issued *Surat Tugas* and related travel records.
+- Cleans, validates, and restructures raw operational data.
+- Maintains a single, consistent dataset that serves as the foundation for all downstream reporting and analysis.
+
+### Layer 2 — Operational Monitoring
+Provides end-to-end visibility into document processing, enabling finance staff to monitor operational progress proactively.
+
+**Capabilities**
+- Automatically calculates report submission deadlines (H+3) and highlights overdue cases requiring follow-up.
+- Tracks the current processing stage of every travel expense record based on workflow timestamps.
+- Displays document progress across the complete lifecycle (EST → VER → NOM → REAL).
+  
+### Layer 3 — Verification & Expense Processing
+Supports structured verification and preparation of travel expense data for payment processing.
+
+**Capabilities**
+- Records verified expense values and categorizes payments by recipient (employee or office-side vendors).
+- Generates detailed payment recapitulations for each record, including employee settlements, vendor payments, and total expenditure.
+- Maintains traceability between individual travel records and their corresponding payment batches (*Nominatif*).
+
+### Layer 4 — Budget & Payment Management
+Transforms verified operational data into financial monitoring and payment-ready information.
+
+**Capabilities**
+- Monitors budget commitments throughout the entire processing lifecycle (EST → VER → NOM → REAL).
+- Provides real-time budget absorption analysis by *Mata Anggaran*, including allocation, commitments, realization, remaining budget, and utilization percentage.
+- Automatically consolidates vendor payments by disbursement cycle.
+- Generates province-grouped compilations with automated staging codes (*kode tahapan*) for each *Mata Anggaran*, enabling the downstream financial system operator to process payment batches without manual lookup.
+
+### Layer 5 — Management Reporting
+Converts a single synchronized operational dataset into multiple decision-support outputs for finance staff and management.
+
+**Capabilities**
+- Generates operational dashboards for document status, budget lifecycle, and budget absorption.
+- Produces management-ready reports without additional manual reconciliation.
+- Creates structured realization summaries for each disbursement cycle.
+- Ensures consistent reporting across all operational and financial outputs through a single source of operational data.
+
+### Roadmap & Continuous Improvement
+
+The system is designed as a continuously evolving decision-support platform. New analytical capabilities and automation workflows are added incrementally as operational needs are identified — without modifying the existing organization application, and without disrupting ongoing operations.
+
+---
 
 **Note:** This repository presents the system architecture, design methodology, and selected implementation concepts for portfolio and knowledge-sharing purposes. Certain implementation details, business rules, datasets, and automation workflows have been intentionally omitted or generalized to protect organizational confidentiality and intellectual property.
